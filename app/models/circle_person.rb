@@ -1,0 +1,2 @@
+class CirclePerson < ApplicationRecord
+end
