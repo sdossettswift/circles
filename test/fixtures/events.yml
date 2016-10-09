@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: MyString
+  time: MyString
+  location: MyString
+  host: MyString
+  attendance: 1
+  type: 
+
+two:
+  date: MyString
+  time: MyString
+  location: MyString
+  host: MyString
+  attendance: 1
+  type: 
