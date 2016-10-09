@@ -10,6 +10,22 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
+gem 'minitest-rails'
+gem 'simple_form'
+gem 'bootstrap-sass'
+gem 'devise'
+gem 'pg_search'
+gem 'rails-erd'
+
+group :production do
+  gem 'rails_12factor' #for heroku
+end
+
+group :test do
+  gem 'minitest-rails-capybara'
+end
+
+
 # gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do

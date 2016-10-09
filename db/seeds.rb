@@ -1,7 +1,41 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+@grief = Circle.create!
+@grief.name = "SPM - Grief"
+@grief.save
+
+@core = Circle.create!
+@core.name = "Core Team"
+@core.save
+
+@acc = Circle.create!
+@acc.name = "Advanced Cancer Circle"
+@acc.save
+
+@hope = Circle.create!
+@hope.name = "Hopes & Expectations"
+@hope.save
+
+@story = Circle.create!
+@story.name = "My Story"
+@story.save
+
+@dreams = Circle.create!
+@dreams.name = "Unrealized Dreams"
+@dreams.save
+
+@guilt = Circle.create!
+@guilt.name = "Guilt & Anger"
+@guilt.save
+
+@joy = Circle.create!
+@joy.name = "Blessings & Joy"
+@joy.save
+
+@strategies = Circle.create!
+@strategies.name = "Strategies & Resources"
+@strategies.save
+
+@circles = Circle.all
+
+@circles.each do |circle|
+  puts circle.name
+end
