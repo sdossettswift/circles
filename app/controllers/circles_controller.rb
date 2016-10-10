@@ -10,6 +10,11 @@ before_action :find_circle, only: [:show, :edit, :update, :destroy]
  end
 
  def show
+
+   @host = @circle.people.by_role("Host")
+   @guardian = @circle.people.by_role("Guardian")
+   @participant = @circle.people.by_role("Participant")
+
  end
 
  def create

@@ -1,0 +1,7 @@
+<h1><%= @circle.name%></h1>
+<p><%= @circle.location%></p>
+<h2>Host:</h2>
+<h3>Guardians:</h3>
+
+<%= render 'user_role_row', user: @host.first, field_name: 'Host' %>
+<%= render 'user_role_row', user: @guardian.first, field_name: 'guardian' %>

@@ -1,0 +1,5 @@
+<%=simple_form_for @people_circle do |f|%>
+ <%= f.association :circle, label_method: :name, value_method: :id%>
+ <%= f.association :person, label_method: :full_name, value_method: :id %>
+ <%= f.button :submit%>
+ <%end%>
