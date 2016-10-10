@@ -1,0 +1,11 @@
+<nav>
+  <div class="logo">
+  <%=image_tag("/circle.jpg") %>
+  </div>
+  <div class="header">
+    <h1>Healing Circles</h1>
+    <%= link_to 'Create Circle', new_circle_path%>
+    <%= link_to 'Add Person', new_person_path%>
+    <%= link_to 'Add Event', new_event_path%>
+  </div>
+</nav>

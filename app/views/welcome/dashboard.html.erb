@@ -1,0 +1,20 @@
+
+
+<div class="circles">
+  <h1> Circles </h1>
+  <ul>
+    <% @circles.each do |circle|%>
+      <li> <%=link_to  circle.name, circle_path(id: circle.id) %> </li>
+    <%end%>
+  </ul>
+</div>
+
+
+<div class="people">
+  <h1> People </h1>
+  <ul>
+    <% @people.each do |person|%>
+      <li> <%= person.first_name %><%=link_to  person.last_name, person_path(id: person.id) %> </li>
+    <%end%>
+  </ul>
+</div>

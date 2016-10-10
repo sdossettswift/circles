@@ -10,20 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161009210927) do
+ActiveRecord::Schema.define(version: 20161010013255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "circle_people", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "circles", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "location"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "room"
+    t.integer  "person_id"
+    t.index ["person_id"], name: "index_circles_on_person_id", using: :btree
   end
 
   create_table "events", force: :cascade do |t|
@@ -55,6 +59,12 @@ ActiveRecord::Schema.define(version: 20161009210927) do
   create_table "people_circles", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "person_id"
+    t.integer  "circle_id"
+    t.index ["circle_id"], name: "index_people_circles_on_circle_id", using: :btree
+    t.index ["person_id"], name: "index_people_circles_on_person_id", using: :btree
   end
 
+  add_foreign_key "people_circles", "circles"
+  add_foreign_key "people_circles", "people"
 end

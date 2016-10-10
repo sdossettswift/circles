@@ -1,4 +1,4 @@
 class PeopleCircle < ApplicationRecord
   belongs_to :circle
-  belongs_to :people
+  belongs_to :person
 end
