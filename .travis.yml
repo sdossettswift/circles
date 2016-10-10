@@ -1,8 +1,17 @@
 language: ruby
 rvm:
-    - 2.3.1
+- 2.3.1
 addons:
-    postgresql: "9.4"
-    before_script:
-        - psql -c 'create database travis_ci_test;' -U postgres
-        - cp config/database.yml.travis config/database.yml
+  postgresql: '9.4'
+  before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
+deploy:
+  provider: heroku
+  api_key:
+    secure: NaGwalOLhszDHnUSlDAgrd2Vh1rVpH/3eBU5bMhnqfHRoz8hjZvxOZ1HCYW1FZ/Bo+/jO4WB7O8AWsURe0SwVqc3kBG/k44H3YTyp0ww4OSNXbmqENwTbQhf1kMYnPDG/D0KEcOdDjExW8HSnL9G7LU8ezJDf+t0FGdxn+RLclZZ+DygsqS96e62Vta5qGOe3Bos+JvD30MBBI8te7nW/LimK3m9QfcaKm+hlLLU4OwD/I+UIxrWMcTblKdLu/0GVlrrqrxEEbnJP2pSAxQvx/JTszv31OUTIn5o2KGRb6VOCcWISpeHU9ZTZPtxMr3WPNHzIo36ouymQ83uYoGIoTYXzw1P7LP+iGhQVA0kQDQRbNukw2pIc8+t+h0Keiq+dZ2qjs7ZRMrJh7hDx6gdWgjC7QJP6cdzF2sFz76z8Wk7ojGvyxnsibIqEfsfOaFpiqtT9Zxohm0ikclLS/bl9avsViwFhWCYg8PaHUwK1C2bTRy0ITaYLtNPeFOimucr0qPmUEf7B+DwQQJXDfelcxZJ5Ij9iPAyXc+3gx1bx30RXPDN2nvgWwDvbp0SZGsrJPNYgqRRrDbDyjis5Vl1ngx0lXXzfntlRek9/jhiavtYwYjVABnYQ0t39z4N+wMS2UkZwRee+kc1PjnHkgdAyPDJNLhKGgjnw9XFjGQjEP0=
+  app: healing-circles
+  on:
+    repo: sdossettswift/circles
+  run:
+    - "rake db:migrate"
